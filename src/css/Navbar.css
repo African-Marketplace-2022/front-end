@@ -1,0 +1,31 @@
+/* 
+#264653
+#2A9D8F
+#E9C46A
+*/
+
+nav {
+  background-color: #264653;
+  color: #fff;
+  padding: 3rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoContainer a {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.menuContainer a {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-right: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.menuContainer a:hover {
+  background-color: #2a9d8f;
+}
