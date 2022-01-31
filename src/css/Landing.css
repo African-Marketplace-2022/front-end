@@ -1,0 +1,51 @@
+* {
+    background: white;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 60px;
+  }
+  
+  h2 {
+    text-align: center;
+    background: #264653;
+    font-size: 40px;
+    margin-top: 0%;
+    padding: 3px;
+  }
+  
+  .body-text {
+      text-align: center;
+      background: #264653;
+      color: #fff;
+
+  }
+
+  h3 {
+      background: #264653;
+      font-size: 30px;
+  }
+  
+  button {
+      text-align: center;
+      margin-left: 600px;
+      margin-top: 50px;
+      padding:30px;
+      background-color: #264653;
+      font-size:20px;
+      color: #fff;
+  }
+  .home-img {
+    margin: 0;
+    margin-left: 450px;
+    width: 500px;
+    height: 300px;
+    padding: 0;
+    
+     
+  }
