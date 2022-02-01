@@ -1,0 +1,107 @@
+/* 
+#264653
+#2A9D8F
+#E9C46A
+*/
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 5rem;
+}
+
+.dashboard-container h2 {
+  font-size: 4rem;
+}
+
+/* MARKET PRICES STYLING */
+
+.prices-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.prices-container h3 {
+  font-size: 3rem;
+}
+.prices-container span {
+  font-size: 1.4rem;
+}
+
+.prices-array {
+  display: flex;
+  gap: 2rem;
+}
+
+.market-item {
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2a9d8f;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.market-item:hover {
+  transform: scale(1.05);
+}
+
+.market-item p {
+  font-size: 1.4rem;
+}
+
+/* OWNER LISTING STYLING */
+
+.items-listed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.items-listed-container h3 {
+  font-size: 3rem;
+}
+
+.listing-array {
+  display: flex;
+  gap: 2rem;
+}
+
+.owner-item {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #2a9d8f;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  text-align: center;
+}
+
+.owner-item p {
+  font-size: 1.6rem;
+}
+
+.owner-item button {
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.owner-item button:hover {
+  background-color: #e9c46a;
+}
