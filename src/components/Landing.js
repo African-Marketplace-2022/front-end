@@ -1,6 +1,7 @@
 import React from "react";
 import HomeImg from "../Images/vegetables-img.jpg";
 import "../css/Landing.css";
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
@@ -15,7 +16,13 @@ const Landing = () => {
           legally, safely, and profitably across Africa.{" "}
         </h3>
       </div>
-      <button id="landing-login">Login To Start!</button>
+      <Link to="/login" className="button-hm">
+        Login
+      </Link>
+      <br></br>
+      <Link to="/signup" className="button-hm">
+        Create Account
+      </Link>
     </div>
   );
 };
