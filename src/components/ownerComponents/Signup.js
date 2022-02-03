@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../css/Signup.css";
 import { useNavigate } from "react-router-dom";
-import { signupUser, loginUser } from "../../actions/ownerActions";
+import { signupUser } from "../../actions/ownerActions";
 import { connect } from "react-redux";
 
 const Signup = ({ isLoggedIn, dispatch }) => {
@@ -27,7 +27,7 @@ const Signup = ({ isLoggedIn, dispatch }) => {
     if (isLoggedIn) {
       navigate("/dashboard");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className="signup-container">

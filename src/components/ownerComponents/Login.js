@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../css/Signup.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/ownerActions";
 
@@ -10,7 +9,6 @@ const Login = ({ error, isFetching, isLoggedIn, dispatch }) => {
     username: "",
     password: "",
   });
-  console.log("ERROR: ", error);
 
   const navigate = useNavigate();
 
@@ -30,7 +28,7 @@ const Login = ({ error, isFetching, isLoggedIn, dispatch }) => {
     if (isLoggedIn) {
       navigate("/dashboard");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className="signup-container">
