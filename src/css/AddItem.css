@@ -1,0 +1,38 @@
+.additem-container {
+    margin: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .additem-container h2 {
+      font-size: 40px;
+  }
+  .additem-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .additem-form label {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    align-items: left;
+  }
+  .additem-form input {
+    margin-left: 2rem;
+    font-size: 2rem;
+  }
+  .additem-form button {
+    cursor: pointer;
+    background-color: #264653;
+    margin-top: 2rem;
+    border: none;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .additem-form button:hover {
+    background-color: #2a9d8f;
+  }

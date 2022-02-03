@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
+import '../../css/AddItem.css';
 
-//styling
-const LabelStyle = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-evenly",
-  fontSize: 16,
-};
+
 
 const marketplaceData = {
   id: "",
@@ -40,14 +35,10 @@ const AddItem = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>List Your Item!</h2>
-        <label style={LabelStyle}>
-          Id Number:&nbsp;
-          <input type="text" name="id" id="id" onChange={handleChange} />
-        </label>
-        <label style={LabelStyle}>
+    <div className="additem-container">
+      <h2>List Your Item!</h2>
+      <form className="additem-form" onSubmit={handleSubmit}>
+        <label >
           Commodity:&nbsp;
           <input
             type="text"
@@ -56,12 +47,20 @@ const AddItem = () => {
             onChange={handleChange}
           />
         </label>
-        <label style={LabelStyle}>
+        <label >
           Price:&nbsp;
           <input type="text" name="price" id="price" onChange={handleChange} />
         </label>
+        <label >
+          Location:&nbsp;
+          <input type="text" name="location" id="location" onChange={handleChange} />
+        </label>
+        <label >
+          Description:&nbsp;
+          <input className="desc-input" type="text" name="description" id="description" onChange={handleChange} />
+        </label>
 
-        <button id="submit" style={LabelStyle}>
+        <button id="submit" >
           Submit
         </button>
       </form>
