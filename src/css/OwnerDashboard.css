@@ -17,6 +17,20 @@
   font-size: 4rem;
 }
 
+.add-item {
+  cursor: pointer;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #2a9d8f;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.add-item:hover {
+  background-color: #55b1a5;
+}
+
 /* MARKET PRICES STYLING */
 
 .prices-container {
