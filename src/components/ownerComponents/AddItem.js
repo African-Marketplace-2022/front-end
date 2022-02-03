@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 //styling
 const LabelStyle = {
@@ -16,9 +17,22 @@ const marketplaceData = {
   price: "",
 };
 
-const AddItem = () => {
+const getting = async function () {
+
+
+  const marketPlaceDataApi = await axiosWithAuth().get('/item').then((res) => console.log(res))
+
+  return marketPlaceDataApi
+}
+
+getting()
+
+const AddItem = (props) => {
   const [item, setItem] = useState(marketplaceData);
   const navigate = useNavigate();
+
+  
+  console.log(item)
 
   const handleChange = (e) => {
     setItem({
@@ -29,7 +43,7 @@ const AddItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post(`/`, item)
+      .post(`/item`, item)
       .then((resp) => {
         console.log(resp);
         navigate("/");

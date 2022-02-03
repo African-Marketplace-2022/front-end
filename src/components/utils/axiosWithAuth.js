@@ -9,6 +9,7 @@ const axiosWithAuth = () => {
             
         },
         baseURL: 'https://africann-market.herokuapp.com/api'
+
     })
 }
 

@@ -19,7 +19,7 @@ const ownerListingData = [
     itemName: "Eggs",
     description: "The best eggs around",
     price: "$1.45",
-  },
+  }
 ];
 
 export default ownerListingData;

@@ -1,3 +1,10 @@
+import AddItem from "./components/ownerComponents/AddItem";
+
+
+const newItem = ''
+
+console.log(newItem);
+
 const marketplaceData = [
   {
     id: 1,
@@ -23,7 +30,8 @@ const marketplaceData = [
     id: 5,
     commodity: "Maize",
     price: "$0.50",
-  },
+  }
 ];
+
 
 export default marketplaceData;
