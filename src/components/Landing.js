@@ -12,17 +12,21 @@ const Landing = () => {
       <div className="body-text">
         <h2>What were about:</h2>
         <h3>
-          We empower women-led small and medium-sized enterprises to trade to
-          legally, safely, and profitably across Africa.{" "}
+          We empower women-led small and medium-sized<br></br> enterprises to trade to
+          legally, safely, <br></br>and profitably across Africa.{" "}
         </h3>
       </div>
       <Link to="/login" className="button-hm">
         Login
       </Link>
-      <br></br>
+
       <Link to="/signup" className="button-hm">
         Create Account
       </Link>
+      <Link to="/shop" className="button-hm">
+        View Listings
+      </Link>
+
     </div>
   );
 };
