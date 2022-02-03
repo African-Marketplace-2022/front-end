@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/Signup.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/ownerActions";
 
-const Login = () => {
+const Login = ({ error, isFetching, isLoggedIn, dispatch }) => {
   const [values, setValues] = useState({
     username: "",
     password: "",
   });
+  console.log("ERROR: ", error);
 
   const navigate = useNavigate();
-
-  console.log(values);
 
   const handleChange = (e) => {
     setValues({
@@ -22,15 +23,15 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post("https://africann-market.herokuapp.com/api/user/login", values)
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        navigate("/dashboard");
-      })
-      .catch((err) => console.log(err));
+    dispatch(loginUser(values.username, values.password));
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [isLoggedIn]);
+
   return (
     <div className="signup-container">
       <h2>Login</h2>
@@ -55,8 +56,17 @@ const Login = () => {
         </label>
         <button>Login</button>
       </form>
+      {error ? <p>{error}</p> : null}
     </div>
   );
 };
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    error: state.error,
+    isFetching: state.isFetching,
+    isLoggedIn: state.isLoggedIn,
+  };
+};
+
+export default connect(mapStateToProps)(Login);

@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../../css/Signup.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { signupUser, loginUser } from "../../actions/ownerActions";
+import { connect } from "react-redux";
 
-const Signup = () => {
+const Signup = ({ isLoggedIn, dispatch }) => {
   const [values, setValues] = useState({
     username: "",
     password: "",
   });
-
   const navigate = useNavigate();
-
-  console.log(values);
 
   const handleChange = (e) => {
     setValues({
@@ -22,15 +20,14 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post("https://africann-market.herokuapp.com/api/user/register", values)
-      .then((res) => {
-        console.log(res);
-        navigate("/dashboard");
-      })
-      .catch((err) => console.log(err));
+    dispatch(signupUser(values.username, values.password));
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/dashboard");
+    }
+  }, [isLoggedIn]);
 
   return (
     <div className="signup-container">
@@ -60,4 +57,10 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: state.isLoggedIn,
+  };
+};
+
+export default connect(mapStateToProps)(Signup);
