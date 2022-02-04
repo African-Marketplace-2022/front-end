@@ -2,85 +2,102 @@ import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
-//styling
-const LabelStyle = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-evenly",
-  fontSize: 16,
-};
-
-const marketplaceData = {
-  id: "",
-  commodity: "",
-  price: "",
-};
-
-const getting = async function () {
+import '../../css/AddItem.css';
 
 
-  const marketPlaceDataApi = await axiosWithAuth().get('/item').then((res) => console.log(res))
 
-  return marketPlaceDataApi
-}
 
-getting()
+// const newItems = {
+//   item_name: "Apple",
+//   description: "for somthing",
+//   category: "34343",
+//   price: 22,
+//   market_id: "1",
+//   user_id: "1"
+// };
+
 
 const AddItem = (props) => {
-  const [item, setItem] = useState(marketplaceData);
+  const [item, setItem] = useState();
   const navigate = useNavigate();
 
-  
-  console.log(item)
+
+
 
   const handleChange = (e) => {
     setItem({
       ...item,
       [e.target.name]: e.target.value,
     });
-  };
+    }
+
+  // console.log(itemsAll);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-      .post(`/item`, item)
+      .post(`/item`,  item)
       .then((resp) => {
         console.log(resp);
         navigate("/");
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
   };
 
+  
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h2>List Your Item!</h2>
-        <label style={LabelStyle}>
-          Id Number:&nbsp;
-          <input type="text" name="id" id="id" onChange={handleChange} />
-        </label>
-        <label style={LabelStyle}>
+    <div className="additem-container">
+      <h2>List Your Item!</h2>
+      <form className="additem-form" onSubmit={handleSubmit}>
+        <label >
           Commodity:&nbsp;
           <input
             type="text"
-            name="commodity"
-            id="commodity"
+            name="item_name"
+            id="item_name"
             onChange={handleChange}
           />
         </label>
-        <label style={LabelStyle}>
+        <label >
+          Description:&nbsp;
+          <input className="desc-input" type="text" name="description" id="description" onChange={handleChange} />
+        </label>
+        <label >
+          Category:&nbsp;
+          <input className="desc-input" type="text" name="category" id="category" onChange={handleChange} />
+        </label>
+        <label >
           Price:&nbsp;
-          <input type="text" name="price" id="price" onChange={handleChange} />
+          <input type="number" name="price" id="price" onChange={handleChange} />
+        </label>
+        <label >
+          Market ID:&nbsp;
+          <input className="desc-input" type="text" name="market_id" id="market_id" onChange={handleChange} />
+        </label>
+        <label >
+          Location:&nbsp;
+          <input type="text" name="user_id" id="user_id" onChange={handleChange} />
         </label>
 
-        <button id="submit" style={LabelStyle}>
+        <button id="submit" >
           Submit
         </button>
       </form>
     </div>
   );
 };
+
+// token
+	// {
+	// item_name(required),
+	// description,
+	// category(required),
+	// price(required),
+	// market_id(required),
+	// user_id(required)
+	// } 
 
 export default AddItem;

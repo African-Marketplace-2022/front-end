@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../css/OwnerDashboard.css";
 import marketplaceData from "../../marketplaceData";
 import ownerListingData from "../../ownerListingData";
+import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
+
+// const dataImport = axiosWithAuth().get(`/item`).then(resp => {
+
+//   return importItems.push(...resp.data)
+//   })
+// .catch((err) => {
+// console.log(err.response.data);
+// });
+
+// const importItems = [];
+
 
 const OwnerDashboard = () => {
   const date = new Date();
@@ -22,16 +34,26 @@ const OwnerDashboard = () => {
     );
   });
 
-  const ownerListingArr = ownerListingData.map((item) => {
-    return (
-      <div key={item.id} className="owner-item">
-        <p>{item.itemName}</p>
-        <p>{item.location}</p>
-        <p>{item.description}</p>
-        <p>{item.price}</p>
-        <button>Buy</button>
-      </div>
-    );
+
+  
+
+   
+
+
+
+  const ownerListingArr =  ownerListingData.map((items) => {
+
+
+
+  return (
+    <div key={items.item_id} className="owner-item">
+  <p>{items.item_name}</p>
+  <p>{items.description}</p>
+  <p>{items.category}</p>
+  <p>{items.price}</p>
+  <button>Buy</button>
+</div>
+)
   });
 
   return (

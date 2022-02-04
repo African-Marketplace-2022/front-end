@@ -40,22 +40,34 @@
   color: #fff;
 }
 .home-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  margin-left: 450px;
+  margin-left: 475px;
   width: 500px;
   height: 300px;
   padding: 0;
 }
 
 .button-hm {
-  font-size: 20px;
-  color: black;
-  padding: 3px;
-  border-radius: 10%;
-  border: none;
+  width: 15rem;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin: auto;
-  border: 10px;
-  border-color: black;
+  border: 1px solid #264653;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-left: 650px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom:0px; 
+}
+
+.button-hm:hover {
+  background-color: #2A9D8F;
 }
