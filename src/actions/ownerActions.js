@@ -1,4 +1,3 @@
-import axiosWithAuth from "../components/utils/axiosWithAuth";
 import axios from "axios";
 
 export const FETCH_USER = "FETCH_USER";
