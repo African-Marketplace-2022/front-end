@@ -12,16 +12,6 @@ const OwnerDashboard = (props) => {
   const today = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
   const navigate = useNavigate();
   const [data, setData] = useState(ownerListingData);
-
-
-  
-
-
-
-  // console.log(data, ownerListingData);
-  
-//  console.log(ownerListingData.flat());
-
   
 
   const handleAddItem = () => {

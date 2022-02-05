@@ -7,12 +7,12 @@ import '../../css/AddItem.css';
 
 
 const newItems = {
-  item_name: "Apple",
-  description: "for somthing",
-  category: "34343",
-  price: 22,
-  market_id: "1",
-  user_id: "1"
+  item_name: "",
+  description: "",
+  category: "",
+  price: 0,
+  market_id: "",
+  user_id: ""
 };
 
 
@@ -31,8 +31,6 @@ const AddItem = (props) => {
   }
   item.price = +item.price;
 
-  console.log(item);
-  // console.log(itemsAll);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -90,15 +88,5 @@ const AddItem = (props) => {
     </div>
   );
 };
-
-// token
-	// {
-	// item_name(required),
-	// description,
-	// category(required),
-	// price(required),
-	// market_id(required),
-	// user_id(required)
-	// } 
 
 export default AddItem;
