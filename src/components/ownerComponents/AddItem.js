@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import '../../css/AddItem.css';
 
 
 
 
-// const newItems = {
-//   item_name: "Apple",
-//   description: "for somthing",
-//   category: "34343",
-//   price: 22,
-//   market_id: "1",
-//   user_id: "1"
-// };
+const newItems = {
+  item_name: "Apple",
+  description: "for somthing",
+  category: "34343",
+  price: 22,
+  market_id: "1",
+  user_id: "1"
+};
 
 
 const AddItem = (props) => {
-  const [item, setItem] = useState();
+  const [item, setItem] = useState(newItems);
   const navigate = useNavigate();
 
 
@@ -27,10 +26,12 @@ const AddItem = (props) => {
   const handleChange = (e) => {
     setItem({
       ...item,
-      [e.target.name]: e.target.value,
+    [e.target.name]: e.target.value,
     });
-    }
+  }
+  item.price = +item.price;
 
+  console.log(item);
   // console.log(itemsAll);
 
   const handleSubmit = (e) => {
@@ -71,7 +72,7 @@ const AddItem = (props) => {
         </label>
         <label >
           Price:&nbsp;
-          <input type="number" name="price" id="price" onChange={handleChange} />
+          <input type="number" name="price" id="price" step={1.00} onChange={handleChange} />
         </label>
         <label >
           Market ID:&nbsp;

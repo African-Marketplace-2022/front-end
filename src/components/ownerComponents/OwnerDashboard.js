@@ -5,21 +5,24 @@ import ownerListingData from "../../ownerListingData";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { useNavigate } from "react-router-dom";
 
-// const dataImport = axiosWithAuth().get(`/item`).then(resp => {
-
-//   return importItems.push(...resp.data)
-//   })
-// .catch((err) => {
-// console.log(err.response.data);
-// });
-
-// const importItems = [];
 
 
-const OwnerDashboard = () => {
+const OwnerDashboard = (props) => {
   const date = new Date();
   const today = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
   const navigate = useNavigate();
+  const [data, setData] = useState(ownerListingData);
+
+
+  
+
+
+
+  // console.log(data, ownerListingData);
+  
+//  console.log(ownerListingData.flat());
+
+  
 
   const handleAddItem = () => {
     navigate("/addItem");
@@ -34,17 +37,14 @@ const OwnerDashboard = () => {
     );
   });
 
-
   
-
    
 
+console.log(data);
 
-
-  const ownerListingArr =  ownerListingData.map((items) => {
-
-
-
+const ownerListingArr = data.flatMap((items) => {
+  
+console.log(items);
   return (
     <div key={items.item_id} className="owner-item">
   <p>{items.item_name}</p>
@@ -55,6 +55,10 @@ const OwnerDashboard = () => {
 </div>
 )
   });
+
+ 
+
+
 
   return (
     <div className="dashboard-container">
@@ -75,5 +79,7 @@ const OwnerDashboard = () => {
     </div>
   );
 };
+
+
 
 export default OwnerDashboard;
