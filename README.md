@@ -18,31 +18,31 @@ You will build a platform to enable these business owners to create listing for 
 
 ### Meet The Team
 
-### Teammate
+### Brett Smith
 
 #### Front End Engineer
 
-Github: https://github.com/
+Github: https://github.com/brettsmith212
 
-### Teammate
-
-#### Front End Engineer
-
-Github: https://github.com/
-
-### Teammate
+### Jessica Fuerte
 
 #### Front End Engineer
 
-Github: https://github.com/
+Github: https://github.com/Jefuerte
 
-### Teammate
+### Khaleel Musleh
+
+#### Front End Engineer
+
+Github: https://github.com/khaleel737
+
+### Nicholas Allday
 
 #### Back End Engineer
 
-Github: https://github.com/
+Github: https://github.com/OrdainedRat
 
-### Teammate
+### Arsalan Rahimi
 
 #### Back End Engineer
 
